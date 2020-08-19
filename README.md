@@ -1,4 +1,4 @@
-# GoogleHistoryParser
+# Google History Parser
 A parser for Google Chrome's history takeout.
 
 It only takes your Google Chrome history json file (which you can get at https://myaccount.google.com/data-and-personalization) and creates a .csv file with the following data:
