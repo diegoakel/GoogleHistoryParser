@@ -14,3 +14,7 @@ It only takes your Google Chrome history json file (which you can get at https:/
 - Second
 
 I left URL, client_id and favicon_url out because I think it cannot give any useful insights, but it is easily addable through the toCSV function.
+
+When reading "Title" data, you need to decode it with utf-8, with:
+
+    title = data["Title"].decode("utf-8")

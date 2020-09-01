@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import pandas as pd
 import json
 import csv
@@ -23,8 +25,8 @@ def toCSV (data):
             minute = time.minute
             second  = time.second
 
-            csv_file.writerow([item["page_transition"], item["title"], domain, year, month, day, hour, minute, second])
+            csv_file.writerow([item["page_transition"], item["title"].encode('utf-8'), domain, year, month, day, hour, minute, second])
 
-with open("BrowserHistory.json") as json_file:
+with open("BrowserHistory.json", "r", encoding="utf-8") as json_file:
   data = json.load(json_file)
   toCSV(data)
