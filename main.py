@@ -4,7 +4,7 @@ import pandas as pd
 import json
 import csv
 from datetime import datetime
-import tldextract
+from urllib.parse import urlparse
 
 
 def toCSV (data): 
@@ -14,7 +14,7 @@ def toCSV (data):
         csv_file.writerow(["Page transition", "Title", "Domain","Year", "Month", "Day", "Hour", "Minute", "Second"])
         for item in data["Browser History"]:
 
-            domain = tldextract.extract(item["url"])[1]
+            domain = urlparse(item["url"]).netloc
 
             time = pd.to_datetime(item["time_usec"],unit='us',utc=True).tz_convert("Etc/GMT+4")
            
